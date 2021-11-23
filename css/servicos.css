@@ -1,0 +1,112 @@
+:root{
+    --azul-esverdiado:#21535C;
+    --ciano: #9BDBF7;
+    --vermelho: #c1121f;
+    --turquesa: turquoise;
+    --azul: #19647E;
+    --verde: darkgreen;
+}
+body{
+    font-family: 'Oswald', sans-serif;
+}
+/* MONTAGEM CABEÇALHO*/
+.cabecalho{
+    display: flex;
+    background-color: var(--azul-esverdiado);
+    justify-content: center;
+}
+.container{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+}
+.navbar__lista{
+    display: flex;
+}
+.lista__item{
+    margin-left: 15px;
+    padding: 10px;
+}
+.lista__link{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+.lista__link:hover, .ativo{
+    border-bottom: 3px solid var(--ciano);
+}
+/*-------------------------------------------*/
+/* MONTAGEM CONTEÚDO PRINCIPAL */
+.conteudo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box{
+    margin: 150px 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 3px solid black;
+    height: auto;
+    width: 30%;
+    margin-right: 10px;
+    border-radius: 20px;
+    transition: all 0.4s;
+}
+.box > h1, .box > img, .box > p{
+    padding: 25px 15px;
+    text-align: justify;
+}
+.box > h1{
+    font-size: 28px;
+}
+.box > p{
+    font-size: 18px;
+    padding-bottom: 40px;
+}
+.box:last-child{
+    margin-right: 0px;
+}
+.box:hover{
+    border-width: 6px;
+}
+.box__cardio{
+    border-color: var(--vermelho);
+}
+.box__neuro{
+    border-color: var(--verde)
+}
+.box__dentista{
+    border-color: var(--azul);
+}
+.rodape{
+    background-color: var(--azul-esverdiado);
+    text-align: center;
+    padding: 20px 0px;
+}
+.rodape p{
+    padding-top: 15px;
+    color: #FFF;
+}
+/*--------------------------------------------*/
+/* RESPONSIVO */
+@media screen and (min-width: 0px) and (max-width:1020px){
+    header{
+        margin-bottom: 70px;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .conteudo{
+        flex-direction: column;
+    }
+    .box{
+        width: 75%;
+        margin: 35px 0px;
+    }
+}

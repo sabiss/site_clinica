@@ -1,0 +1,119 @@
+:root{
+    --azul-esverdiado:#21535C;
+    --ciano: #9BDBF7;
+    --vermelho: #c1121f;
+    --turquesa: turquoise;
+    --azul: #19647E;
+    --verde: darkgreen;
+}
+body{
+    font-family: 'Oswald', sans-serif;
+}
+/* MONTAGEM CABEÇALHO*/
+.cabecalho{
+    display: flex;
+    background-color: var(--azul-esverdiado);
+    justify-content: center;
+}
+.container{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0px;
+}
+.navbar__lista{
+    display: flex;
+}
+.lista__item{
+    margin-left: 15px;
+    padding: 10px;
+}
+.lista__item:first-child{
+    margin-left: 0px;
+}
+.lista__link{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+.lista__link:hover, .ativo{
+    border-bottom: 3px solid var(--ciano);
+}
+/*------------------------------------------------*/
+.conteudo, .formulario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+
+}
+.formulario__forms{
+    display: inline-block;
+    align-items: center;
+}
+.inputPadrao{
+    width: 70%;
+    display: block;
+    margin: 15px 0px;
+    padding: 10px;
+}
+.radio, .select {
+    margin:30px 0px
+}
+.enviar{
+    background:#50C9DE;
+    color: white;
+    font-size: 18px;
+    width:70%;
+    padding:10px 0;
+    margin-top: 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+legend{
+    margin: 10px 0px; 
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.formulario__forms > label{
+    font-size: 20px;
+}
+.tabela{
+    font-size: 18px;
+    width: 211px;
+    vertical-align: top;
+}
+td, th{
+    border: 2px solid black;
+    padding: 5px 15px;
+}
+thead{
+    background: #3E5A5E;
+    color:white;
+    font-weight: bold;
+}
+@media only screen and (max-width:600px){
+    .cabecalho, .container, .conteudo, .formulario, .formulario__forms{
+        flex-direction: column;                 
+    }
+    .container{
+        justify-content: stretch;
+    }
+    .inputPadrao{
+        width: 90%;
+    }
+    .enviar{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    .tabela{
+        text-align: center;
+        margin: auto;
+    }
+}
