@@ -4,92 +4,96 @@ body{
         "cabecalho"
         "conteudo"
         "rodape";
-    grid-template-rows: 200px auto auto;
+    grid-template-rows: auto auto auto;
     font-family: 'Oswald', sans-serif;
 }
 /*CONFIGURANDO CABEÇALHO*/
 .cabecalho{
-    grid-area: cabecalho;
-    padding: 20px 60px;
+    display: flex;
     background-color: #21535C;
-    font-weight: 400;
+    justify-content: center;
 }
 .container{
-    margin: auto;
+    display: flex;
     width: 100%;
-    max-width: 980px;
-    justify-content: space-between;
-    display: flex;
+    justify-content: space-around;
     align-items: center;
+    padding: 20px 0px;
 }
-.cabecalho-lista{
+.navbar__lista{
     display: flex;
 }
-.itens-lista-cabecalho{
-    margin-right: 10px;
-    padding: 0 10px;
+.lista__item{
+    margin-left: 15px;
+    padding: 10px;
+}
+.lista__item:first-child{
+    margin-left: 0px;
+}
+.lista__link{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 1.3rem;
     text-transform: uppercase;
 }
-.itens-lista-cabecalho:last-child{
-    margin-right: 0;
-    padding-right: 0;
-}
-
-.links-cabecalho{
-    color: #FFF;
-    text-decoration: none;
-    font-size: 22px;
-}
-
-.links-cabecalho:hover, .ativo{
+.lista__link:hover, .ativo{
     border-bottom: 3px solid #9BDBF7;
 }
 /*----------------------------------------*/
 /*CONFIGURANDO CORPO DO SITE*/
-.principal{
+.descricao-clinica{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 90vh;
+}
+/* .principal{
     grid-area: conteudo;
     display: grid;
     grid-template-rows: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
     grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
     height: calc(300vh - 200px);
     padding: 0 20px;
-}
+} */
 /*Apresentação da clínica*/
 .titulo-descricao{
-    grid-column: 3 / 7;
-    grid-row: 2 / 2;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 6px outset #409BC2;
-    font-size: 35px;
-    padding: 20px 0px;
+    font-size: 2em;
+    padding: 2% 10%;
 }
 .descricao{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    grid-column: 3 / 6;
-    grid-row: 4 / 7;
     background-color: #9BDBF7;
-    width: 636px;
-    font-size: 18px;
+    width: 60%;
+    height: 45%;
+    font-size: 1.5em;
     color: black;
     text-align: justify;
     line-height: 25px;
-    padding: 0px 10px;
+    padding: 10px 10px;
 }
 .descricao p::before{
     content: "\261B";
 }
 /*apresentação da lista de alguns serviços*/
+.especialidades{
+    display: flex;
+    justify-content: center;
+    height: 200vh;
+}
+
 .fotos-proficionais{
-    display: grid;
-    grid-row:  8 / 16;
-    grid-column: 2 / 8;
-    grid-template-columns: 33.33% 33.33% 33.33%;
-    gap: 10px;
-    margin-top: 15px;
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
 }
 .card{
     background-color: white;
@@ -102,15 +106,21 @@ body{
     text-align: justify;
     line-height: 30px;
     border: 3px solid #409BC2;
+    width: 300px;
+    height: 400px;
+}
+.card:nth-child(odd){
+    margin-right: 20px;
 }
 .card__titulo{
-    font-size: 25px;
+    font-size: 1.4em;
     text-align: center;
     align-self: center;
     border-bottom: 2px solid tomato;
 }
 .card__descricao{
-    font-size: 16px;
+    font-size: 1em;
+    padding: 0px 10px;
 }
 
 .imagem-cirurgia{
@@ -139,8 +149,10 @@ body{
 }
 
 .localizacao{
-    grid-row: 17 / 21;
-    grid-column: 3 / 7;
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+    flex-direction: column;
 }
 .localizacao__titulo{
     text-align: center;
@@ -150,6 +162,8 @@ body{
 }
 .mapa{
     margin-top: 15px;
+    display: flex;
+    justify-content: center;
 }
 .rodape{
     grid-area: rodape;
@@ -167,145 +181,97 @@ body{
     font-size: 14px;
 }
 /*RESPONSIVO*/
-@media screen and (min-width: 0) and (max-width: 600px){
+@media only screen and (min-width: 0px) and (max-width: 480px){
     .container{
-        flex-direction: column;
-        margin: auto;
+        flex-direction: column  ;
     }
-    .cabecalho{
-        padding-top: 15px;
-        padding-bottom: 0px;
-    }
-    .cabecalho img{
-        width: 60%;
-    }
-    .cabecalho-lista{
-        font-size: 14px;
-        margin-top: 15px;
-    }
-    .titulo-descricao{
-        font-size: 30px;
-        padding: 10px 0px;
-        margin: 0px 10px 65px 0px;
+    .cabecalho__logo{
+        margin-bottom: 5px;
     }
     .descricao{
-        width: auto;
-        padding: 15px 15px;
+        width: 85%;
+        height: 70%;
+        font-size: 1.2em;
     }
-
-    .principal{
-        display: flex;
-        flex-direction: column;
-        padding-top: 85px;
+    .especialidades{
         height: auto;
     }
-    .fotos-proficionais{
-        display: flex;
-        flex-direction: column;
-    }
     .card{
-        height: 350px;
-        width: auto;
         margin-top: 20px;
+        height: 450px;
+    }
+    .card:first-child{
+        margin-top: 0px;
+    }
+    .card:nth-child(odd){
+        margin-right: 0px;
     }
     .localizacao__titulo{
-        padding-top: 25px;
+        margin-top: 50px;
     }
 }
-@media screen and (min-width: 700px) and (max-width: 800px){
-    .container{
-        flex-direction: column;
-        margin: auto;
-    }
-    .cabecalho{
-        padding-top: 15px;
-        padding-bottom: 0px;
-    }
-    .cabecalho img{
-        width: 30%;
-    }
-    .cabecalho-lista{
-        font-size: 14px;
-        margin-top: 15px;
-    }
-    .links-cabecalho{
-        font-size: 25px;
-    }
-    .cabecalho-lista{
-        align-items: end;
-    }
-    .titulo-descricao{
-        font-size: 30px;
-        padding: 10px 0px;
-        margin: 0px 10px 65px 0px;
-    }
+@media only screen and (min-width: 768px) and (max-width: 1279px ){
     .descricao{
-        width: auto;
-        padding: 15px 15px;
+        width: 85%;
+        height: 70%;
+        font-size: 1.2em;
     }
-
-    .principal{
-        display: flex;
-        flex-direction: column;
-        padding-top: 85px;
+    .especialidades{
         height: auto;
     }
-    .fotos-proficionais{
-        display: flex;
-        flex-direction: column;
-    }
     .card{
-        height: 350px;
-        width: auto;
         margin-top: 20px;
+        height: 450px;
+    }
+    .card:first-child{
+        margin-top: 0px;
+    }
+    .card:nth-child(odd){
+        margin-right: 0px;
     }
     .localizacao__titulo{
-        padding-top: 25px;
+        margin-top: 50px;
     }
 }
-@media screen and (min-width: 800px) and (max-width: 1200px)    {
-    .container{
-        flex-direction: column;
-        margin: auto;
-    }
-    .cabecalho{
-        padding-top: 15px;
-        padding-bottom: 0px;
-    }
-    .cabecalho img{
-        width: 21%;
-    }
-    .cabecalho-lista{
-        font-size: 14px;
-        margin-top: 15px;
+@media only screen and (min-width: 1500px){
+    .lista__link{
+        font-size: 2.2em;
+        border-width: 5px;
     }
     .titulo-descricao{
-        font-size: 30px;
-        padding: 10px 0px;
-        margin: 0px 10px 65px 0px;
+        font-size: 4em;
     }
     .descricao{
-        width: auto;
-        padding: 15px 15px;
+        width: 85%;
+        height: 70%;
+        font-size: 3em;
+        line-height: initial;
     }
-
-    .principal{
-        display: flex;
-        flex-direction: column;
-        padding-top: 85px;
+    .especialidades{
         height: auto;
     }
-    .fotos-proficionais{
-        display: flex;
-        flex-direction: column;
-    }
     .card{
-        height: 350px;
-        width: auto;
         margin-top: 20px;
+        height: 450px;
+        width: 474px;
+    }
+    .card__descricao{
+        font-size: 2em;
+        padding: 10px 20px;
+    }
+    .card__titulo{
+        font-size: 2.5em;
+    }
+    .card:first-child{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .card:nth-child(odd){
+        margin-right: 0px;
     }
     .localizacao__titulo{
-        padding-top: 25px;
+        margin-top: 50px;
+        font-size: 3em;
     }
 }
 
